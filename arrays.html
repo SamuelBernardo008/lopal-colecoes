@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arreys</title>
+</head>
+<body>
+    <center>
+        <h1> Lista de Alunos:</h1>
+    <script>
+      
+
+      const alunos = ["Aline", "Arthur", "Bárbara", "Bruna Luise"];
+
+        let nomes = prompt("Digite os nomes que devem estar na lista:")
+        alunos.push(nomes);
+
+        let denovo = prompt("Deseja adicionar mais algum item?")
+        if (denovo == "sim"){
+            prompt("")
+        }
+
+        for(let indice = 0; indice < alunos.length; indice++){
+            document.write(alunos[indice] + "<br>");}
+
+
+
+
+        
+
+    </script>
+    </center>
+</body>
+</html>
