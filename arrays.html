@@ -1,35 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arreys</title>
+    <title>Arrays</title>
 </head>
+<center>
 <body>
-    <center>
-        <h1> Lista de Alunos:</h1>
+    <button type="button" onclick="adicionarAlunos()">Adicionar Alunos</button>
+    <button type="button" onclick="removerAluno()">Remover Aluno</button>
+    <br>
+    <output></output>
+
     <script>
-      
+        let alunos = ["Aline", "Arthur", "Bárbara", "Bruna Luise", "Bruna Torres", "Bruna Velôso", "Cauã", "Daniel", "Davi"];
 
-      const alunos = ["Aline", "Arthur", "Bárbara", "Bruna Luise"];
+        function imprimirAlunos() {
 
-        let nomes = prompt("Digite os nomes que devem estar na lista:")
-        alunos.push(nomes);
+            document.querySelector('output').innerHTML = '<h1>Lista de alunos</h1>';
 
-        let denovo = prompt("Deseja adicionar mais algum item?")
-        if (denovo == "sim"){
-            prompt("")
+            for (let indice = 0; indice < alunos.length; indice++) {
+                document.querySelector('output').innerHTML += alunos[indice] + '<br>';
+            }
+
         }
 
-        for(let indice = 0; indice < alunos.length; indice++){
-            document.write(alunos[indice] + "<br>");}
+        function adicionarAlunos() {
+
+            let novoAluno = prompt('Digite o nome do(a) aluno(a):');
+            alunos.push(novoAluno);
+
+            opcaoUsuario = confirm('Deseja Adicionar mais um aluno?');
+
+            while(opcaoUsuario) {
+                adicionarAlunos();
+            }
+
+            imprimirAlunos(); 
+        }
+
+        imprimirAlunos(); 
+
+        function removerAluno() {
+            let remover = alunos.pop()
+
+            imprimirAlunos(); 
+        }
 
 
+        let frutas = ['maçã', 'banana'];
+        console.log(frutas);
 
-
+        frutas.push('manão');
+        console.log(frutas);
         
-
+        frutas.pop();
+        console.log(frutas);
+        
+        
     </script>
-    </center>
 </body>
+</center>
 </html>
